@@ -11,6 +11,19 @@ import './assets/css/icon.css';
 import './components/common/directives';
 import "babel-polyfill";
 import store from './store'
+import CONFIG from './components/common/config'
+import ECharts from 'vue-echarts/components/ECharts'
+
+//echarts按需引入
+import 'echarts/lib/chart/line'
+import 'echarts/lib/chart/pie'
+import 'echarts/lib/chart/bar'
+import 'echarts/lib/component/tooltip'
+import 'echarts/lib/component/polar'
+import 'echarts/lib/component/legend'
+import 'echarts/lib/component/title.js'
+Vue.component('chart', ECharts)
+
 
 Vue.config.productionTip = false
 // Vue.use(VueI18n);
@@ -18,6 +31,7 @@ Vue.use(ElementUI, {
     size: 'small'
 });
 Vue.prototype.$axios = axios;
+Vue.prototype.$CONFIG = CONFIG;
 
 // const i18n = new VueI18n({
 //     locale: 'zh',
